@@ -1,5 +1,5 @@
 const form = document.getElementById("form");
-const inputs = [...document.querySelectorAll("input")];
+const inputs = document.querySelectorAll("input");
 const passwords = document.querySelectorAll("input[type='password']");
 const inputPwd = document.getElementById("pwd");
 const inputConfirm = document.getElementById("pwd-confirm");

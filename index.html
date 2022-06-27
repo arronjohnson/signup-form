@@ -60,8 +60,10 @@
       </section>
       <section class="form-row">
         <p>
-          <label for="pwd">Password</label>
-          <input type="password" name="pwd" id="pwd"
+          <label for="pwd">
+            Password <span class="requirements">(minimum 8 characters)</span>
+          </label>
+          <input type="password" name="pwd" id="pwd" minlength="8"
             aria-describedby="pwd-validation" required>
           <span class="help" id="pwd-validation" aria-live="polite"></span>
         </p>

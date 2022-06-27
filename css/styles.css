@@ -167,6 +167,14 @@ input.error:focus-visible {
   outline-color: var(--error);
 }
 
+.requirements {
+  color: #7d7d7d;
+  font-family: "Roboto Mono", monospace;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-top: 2px;
+}
+
 .help {
   color: var(--error);
   display: block;
