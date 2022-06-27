@@ -20,13 +20,17 @@
   </aside>
   <main class="container">
     <section class="description">
-      <h2>This is <em>not</em> a real online service!</h2>
-      <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, sit
-        delectus tempora ratione pariatur consequuntur.</h2>
+      <h2 class="description-text">
+        This is <em>not</em> a real online service!
+      </h2>
+      <h2 class="description-text">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, sit
+        delectus tempora ratione pariatur consequuntur.
+      </h2>
     </section>
     <form class="form" action="" method="post" id="form">
       <h2 class="form-header">Enter your details</h2>
-      <section>
+      <section class="form-row">
         <p>
           <label for="first-name">First Name</label>
           <input type="text" name="first-name" id="first-name" required>
@@ -36,7 +40,7 @@
           <input type="text" name="last-name" id="last-name" required>
         </p>
       </section>
-      <section>
+      <section class="form-row">
         <p>
           <label for="email">Email</label>
           <input type="email" name="email" id="email" required>
@@ -46,7 +50,7 @@
           <input type="tel" name="phone" id="phone" required>
         </p>
       </section>
-      <section>
+      <section class="form-row">
         <p>
           <label for="pwd">Password</label>
           <input type="password" name="pwd" id="pwd" class="error" required>
@@ -58,8 +62,10 @@
         </p>
       </section>
     </form>
-    <section class="buttons">
-      <button type="submit" form="form">Create Account</button>
+    <section class="button">
+      <button class="button-submit" type="submit" form="form">
+        Create Account
+      </button>
       <p>Already have an account? <a href="#">Log in</a></p>
     </section>
     <footer class="footer">

@@ -7,6 +7,8 @@
 
 :root {
   --accent: #3689fc;
+  --error: #f00;
+  --shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
 }
 
 html {
@@ -37,9 +39,150 @@ a:hover {
   text-decoration: underline;
 }
 
+h2 {
+  font-weight: 500;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+/*********************************
+  Left side-bar 
+*********************************/
+aside {
+  flex: 0 1 40%;
+  position: relative;
+}
+
+.header {
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  display: flex;
+  gap: 8px;
+  inset: 15% 0 auto 0;
+  justify-content: center;
+  padding: 16px;
+  position: absolute;
+}
+
+.header-text {
+  font-family: "Norse-Bold";
+  font-size: clamp(4.5rem, 5vw + 3rem, 6rem);
+  margin: 0;
+}
+
+/*********************************
+  Right side-bar 
+*********************************/
+main {
+  background-color: rgb(253, 253, 253);
+  flex: 1;
+}
+
+main > section {
+  padding: 32px 48px;
+}
+
+.description {
+  margin-top: auto;
+}
+
+.description-text {
+  width: min(50ch, 100%);
+}
+
+.description-text:last-child {
+  margin-bottom: 0;
+}
+
+/* Form */
+.form {
+  background-color: #fff;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+  padding: 32px 48px;
+}
+
+.form-header {
+  margin: 8px 0 32px 0;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px 72px;
+  margin-bottom: 24px;
+}
+
+.form-row:last-child {
+  margin-bottom: 16px;
+}
+
+.form-row p {
+  margin: 0;
+}
+
+label {
+  color: #3b4b5f;
+  display: block;
+  font-family: "Roboto Mono", monospace;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+input {
+  border: 1px solid #e5e7eb;
+  border-radius: 5px;
+  height: 34px;
+  padding: 6px 10px;
+  width: 280px;
+}
+
+input:focus-visible {
+  border-color: var(--accent);
+  box-shadow: var(--shadow);
+  outline: 1px solid var(--accent);
+}
+
+input.error {
+  border-color: var(--error);
+}
+
+input.error:focus-visible {
+  outline-color: var(--error);
+}
+
+/* Buttons */
+.button-submit {
+  background-color: var(--accent);
+  border: 0;
+  border-radius: 6px;
+  box-shadow: var(--shadow);
+  color: #fff;
+  font-weight: 700;
+  padding: 16px 48px;
+  transition: 0.2s transform ease-in-out;
+}
+
+.button-submit:hover {
+  background-color: #5ea1fd;
+  cursor: pointer;
+}
+
+.button-submit:active {
+  background-color: #86b8fd;
+  transform: scale(0.96);
+}
+
+/* Footer */
 .footer {
   font-size: 1.2rem;
-  text-align: center;
+  margin: auto 1em 0 0;
+  text-align: right;
 }
 
 .footer-icons a {
