@@ -1,9 +1,12 @@
-const inputs = document.querySelectorAll("input");
+const form = document.getElementById("form");
+const inputs = [...document.querySelectorAll("input")];
 const passwords = document.querySelectorAll("input[type='password']");
 const inputPwd = document.getElementById("pwd");
 const inputConfirm = document.getElementById("pwd-confirm");
 
 let inputTimer;
+
+form.addEventListener("submit", (event) => submitForm(event));
 
 inputs.forEach((el) =>
   el.addEventListener("blur", (event) => validateInput(event.target), true)
@@ -15,6 +18,20 @@ passwords.forEach((el) =>
     inputTimer = setTimeout(validatePasswords, 1000);
   })
 );
+
+function submitForm(event) {
+  inputs.forEach((el) => {
+    validateInput(el);
+    if (!el.validity.valid) {
+      event.preventDefault();
+    }
+  });
+
+  const firstInvalid = document.querySelector("input:invalid");
+  if (firstInvalid) {
+    firstInvalid.focus();
+  }
+}
 
 function validateInput(el) {
   const isValid = el.validity.valid;
@@ -32,11 +49,12 @@ function validatePasswords() {
   }
 
   const match = passwordsMatch();
-  const msg = match ? null : "Passwords don't match";
+  const msg = match ? "" : "Passwords don't match";
   passwords.forEach((el) => {
     toggleClass(el, match);
     toggleMessage(el, match, msg);
   });
+  inputConfirm.setCustomValidity(msg);
 }
 
 function passwordsMatch() {
