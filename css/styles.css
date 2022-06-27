@@ -230,3 +230,78 @@ input.error:focus-visible {
 .footer-copyright {
   margin: 8px 0;
 }
+
+/*********************************
+  Tablet
+*********************************/
+@media (max-width: 1250px) {
+  body {
+    align-items: center;
+    background: url("../images/bg.jpg") center/cover no-repeat fixed;
+    flex-direction: column;
+  }
+
+  .container {
+    width: 90%;
+  }
+
+  aside {
+    background: 0;
+    margin-top: 5%;
+  }
+
+  .header {
+    border-radius: 10px 10px 0 0;
+    position: static;
+  }
+
+  main {
+    border-radius: 0 0 10px 10px;
+    margin-bottom: 5%;
+  }
+
+  .description-text:first-child {
+    margin-top: 0;
+  }
+
+  .form-header {
+    margin-bottom: 40px;
+  }
+
+  .footer {
+    align-self: center;
+    margin-right: 0;
+    text-align: center;
+  }
+}
+
+/*********************************
+  Mobile
+*********************************/
+@media (max-width: 450px) {
+  .description {
+    text-align: center;
+  }
+
+  .form-header {
+    text-align: center;
+  }
+
+  .form-row {
+    justify-content: center;
+  }
+
+  input {
+    width: 70vw;
+  }
+
+  .button {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer {
+    margin-top: 32px;
+  }
+}
