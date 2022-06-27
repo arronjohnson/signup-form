@@ -7,6 +7,7 @@
 
 :root {
   --accent: #3689fc;
+  --bg-image: url("../images/bg.jpg");
   --error: #f00;
   --shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
 }
@@ -52,6 +53,7 @@ h2 {
   Left side-bar 
 *********************************/
 aside {
+  background: var(--bg-image) center / cover no-repeat;
   flex: 0 1 40%;
   position: relative;
 }
@@ -66,6 +68,10 @@ aside {
   justify-content: center;
   padding: 16px;
   position: absolute;
+}
+
+.header-logo {
+  height: clamp(100px, 5vw + 80px, 130px);
 }
 
 .header-text {
@@ -196,6 +202,10 @@ input.error:focus-visible {
   text-decoration: none;
 }
 
-.footer-text {
+.footer-attribute {
+  margin-bottom: 8px;
+}
+
+.footer-copyright {
   margin-top: 8px;
 }
