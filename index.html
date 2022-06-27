@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="css/styles.css">
   <script src="https://kit.fontawesome.com/185f24df6a.js"
     crossorigin="anonymous"></script>
-  <script src="js/script.js"></script>
+  <script src="js/script.js" defer></script>
 </head>
 <body>
   <aside class="container">
@@ -33,32 +33,43 @@
       <section class="form-row">
         <p>
           <label for="first-name">First Name</label>
-          <input type="text" name="first-name" id="first-name" required>
+          <input type="text" name="first-name" id="first-name"
+            aria-describedby="first-validation" required>
+          <span class="help" id="first-validation" aria-live="polite"></span>
         </p>
         <p>
           <label for="last-name">Last Name</label>
-          <input type="text" name="last-name" id="last-name" required>
+          <input type="text" name="last-name" id="last-name"
+            aria-describedby="last-validation" required>
+          <span class="help" id="last-validation" aria-live="polite"></span>
         </p>
       </section>
       <section class="form-row">
         <p>
           <label for="email">Email</label>
-          <input type="email" name="email" id="email" required>
+          <input type="email" name="email" id="email"
+            aria-describedby="email-validation" required>
+          <span class="help" id="email-validation" aria-live="polite"></span>
         </p>
         <p>
           <label for="phone">Phone Number</label>
-          <input type="tel" name="phone" id="phone" required>
+          <input type="tel" name="phone" id="phone"
+            aria-describedby="phone-validation" required>
+          <span class="help" id="phone-validation" aria-live="polite"></span>
         </p>
       </section>
       <section class="form-row">
         <p>
           <label for="pwd">Password</label>
-          <input type="password" name="pwd" id="pwd" class="error" required>
+          <input type="password" name="pwd" id="pwd"
+            aria-describedby="pwd-validation" required>
+          <span class="help" id="pwd-validation" aria-live="polite"></span>
         </p>
         <p>
           <label for="pwd">Confirm Password</label>
           <input type="password" name="pwd-confirm" id="pwd-confirm"
-            class="error" required>
+            aria-describedby="confirm-validation" required>
+          <span class="help" id="confirm-validation" aria-live="polite"></span>
         </p>
       </section>
     </form>

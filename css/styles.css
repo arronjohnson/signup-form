@@ -41,6 +41,7 @@ a:hover {
 }
 
 h2 {
+  font-size: 1.4rem;
   font-weight: 500;
 }
 
@@ -108,18 +109,18 @@ main > section {
 .form {
   background-color: #fff;
   box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
-  padding: 32px 48px;
+  padding: 16px 48px;
 }
 
 .form-header {
-  margin: 8px 0 32px 0;
+  margin: 8px 0 24px 0;
 }
 
 .form-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 24px 72px;
-  margin-bottom: 24px;
+  gap: 16px 72px;
+  margin-bottom: 16px;
 }
 
 .form-row:last-child {
@@ -144,7 +145,7 @@ input {
   border: 1px solid #e5e7eb;
   border-radius: 5px;
   height: 34px;
-  padding: 6px 10px;
+  padding: 6px 4ch 6px 10px;
   width: 280px;
 }
 
@@ -154,12 +155,24 @@ input:focus-visible {
   outline: 1px solid var(--accent);
 }
 
+input.valid {
+  background: center right 5px / 24px url("../images/check.svg") no-repeat;
+}
+
 input.error {
   border-color: var(--error);
 }
 
 input.error:focus-visible {
   outline-color: var(--error);
+}
+
+.help {
+  color: var(--error);
+  display: block;
+  min-height: 1.2rem;
+  margin-top: 2px;
+  max-width: 280px;
 }
 
 /* Buttons */
@@ -186,14 +199,14 @@ input.error:focus-visible {
 
 /* Footer */
 .footer {
-  font-size: 1.2rem;
-  margin: auto 1em 0 0;
+  font-size: 1rem;
+  margin: auto 8px 0 0;
   text-align: right;
 }
 
 .footer-icons a {
   color: #000;
-  font-size: 2em;
+  font-size: 1.6em;
   user-select: none;
 }
 
@@ -207,5 +220,5 @@ input.error:focus-visible {
 }
 
 .footer-copyright {
-  margin-top: 8px;
+  margin: 8px 0;
 }
