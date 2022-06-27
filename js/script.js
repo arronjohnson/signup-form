@@ -44,7 +44,11 @@ function validateInput(el) {
 }
 
 function validatePasswords() {
-  if (inputPwd.value === "" || inputConfirm.value === "") {
+  if (
+    inputPwd.value === "" ||
+    inputPwd.value.length < 8 ||
+    inputConfirm.value === ""
+  ) {
     return false;
   }
 
