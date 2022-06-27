@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&family=Roboto:wght@400;700&display=swap");
+
+@font-face {
+  font-family: "Norse-Bold";
+  src: url("../fonts/Norse-Bold.woff");
+}
+
+:root {
+  --accent: #3689fc;
+}
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  display: flex;
+  font-family: "Roboto", sans-serif;
+  min-height: 100%;
+}
+
+a {
+  color: #0467f1;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.footer {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.footer-icons a {
+  color: #000;
+  font-size: 2em;
+  user-select: none;
+}
+
+.footer-icons a:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.footer-text {
+  margin-top: 8px;
+}
