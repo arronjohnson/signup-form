@@ -12,26 +12,77 @@
   <script src="js/script.js"></script>
 </head>
 <body>
-  <footer class="footer">
-    <div class="footer-icons">
-      <a href="https://github.com/arronjohnson" target="_blank"
-        rel="noopener noreferrer">
-        <i class="fa-brands fa-github"></i>
-      </a>
-      <a href="https://www.linkedin.com/in/arronjohnson-uk/" target="_blank"
-        rel="noopener noreferrer">
-        <i class="fa-brands fa-linkedin"></i>
-      </a>
-      <a href="http://arronjohnson.me/" target="_blank"
-        rel="noopener noreferrer">
-        <i class="fa-solid fa-earth-europe"></i>
-      </a>
-      <a href="http://arronjohnson.me/" target="_blank"
-        rel="noopener noreferrer">
-        <i class="fa-solid fa-envelope"></i>
-      </a>
+  <aside class="container">
+    <div class="header">
+      <img class="header-logo" src="images/logo.png" alt="">
+      <h1 class="header-text">Odin</h1>
     </div>
-    <p class="footer-text">Copyright © Arron Johnson 2022</p>
-  </footer>
+  </aside>
+  <main class="container">
+    <section class="description">
+      <h2>This is <em>not</em> a real online service!</h2>
+      <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, sit
+        delectus tempora ratione pariatur consequuntur.</h2>
+    </section>
+    <form class="form" action="" method="post" id="form">
+      <h2 class="form-header">Enter your details</h2>
+      <section>
+        <p>
+          <label for="first-name">First Name</label>
+          <input type="text" name="first-name" id="first-name" required>
+        </p>
+        <p>
+          <label for="last-name">Last Name</label>
+          <input type="text" name="last-name" id="last-name" required>
+        </p>
+      </section>
+      <section>
+        <p>
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" required>
+        </p>
+        <p>
+          <label for="phone">Phone Number</label>
+          <input type="tel" name="phone" id="phone" required>
+        </p>
+      </section>
+      <section>
+        <p>
+          <label for="pwd">Password</label>
+          <input type="password" name="pwd" id="pwd" class="error" required>
+        </p>
+        <p>
+          <label for="pwd">Confirm Password</label>
+          <input type="password" name="pwd-confirm" id="pwd-confirm"
+            class="error" required>
+        </p>
+      </section>
+    </form>
+    <section class="buttons">
+      <button type="submit" form="form">Create Account</button>
+      <p>Already have an account? <a href="#">Log in</a></p>
+    </section>
+    <footer class="footer">
+      <div class="footer-icons">
+        <a href="https://github.com/arronjohnson" target="_blank"
+          rel="noopener noreferrer">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/arronjohnson-uk/" target="_blank"
+          rel="noopener noreferrer">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+        <a href="http://arronjohnson.me/" target="_blank"
+          rel="noopener noreferrer">
+          <i class="fa-solid fa-earth-europe"></i>
+        </a>
+        <a href="http://arronjohnson.me/" target="_blank"
+          rel="noopener noreferrer">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+      </div>
+      <p class="footer-text">Copyright © Arron Johnson 2022</p>
+    </footer>
+  </main>
 </body>
 </html>
