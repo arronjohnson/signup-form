@@ -87,14 +87,11 @@ aside {
 main {
   background-color: rgb(253, 253, 253);
   flex: 1;
+  justify-content: center;
 }
 
 main > section {
   padding: 32px 48px;
-}
-
-.description {
-  margin-top: auto;
 }
 
 .description-text {
@@ -236,9 +233,15 @@ label {
 }
 
 /* Footer */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 32px;
+  padding-left: 48px;
+}
+
 .footer {
   font-size: 1rem;
-  margin: auto 8px 0 0;
   text-align: right;
 }
 
@@ -255,10 +258,12 @@ label {
 
 .footer-attribute {
   margin-bottom: 8px;
+  margin-top: 0;
 }
 
 .footer-copyright {
-  margin: 8px 0;
+  margin-bottom: 0;
+  margin-top: 8px;
 }
 
 /*********************************
@@ -297,10 +302,17 @@ label {
   .form-header {
     margin-bottom: 40px;
   }
+}
+
+@media (max-width: 850px) {
+  .footer-container {
+    flex: 1;
+    flex-direction: column;
+    padding: 32px 48px 24px;
+  }
 
   .footer {
-    align-self: center;
-    margin-right: 0;
+    margin-top: 32px;
     text-align: center;
   }
 }
@@ -331,7 +343,7 @@ label {
     flex-direction: column;
   }
 
-  .footer {
-    margin-top: 32px;
+  .footer-container {
+    padding: 32px 0;
   }
 }
