@@ -150,6 +150,7 @@ label {
   width: 280px;
 }
 
+.form-input:focus,
 .form-input:focus-visible {
   border-color: var(--accent);
   box-shadow: var(--shadow);
