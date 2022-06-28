@@ -1,3 +1,5 @@
+const WARNING_SYMBOL = "\u26A0\uFE0E";
+
 const form = document.getElementById("form");
 const inputConfirm = document.getElementById("pwd-confirm");
 const inputPwd = document.getElementById("pwd");
@@ -14,6 +16,7 @@ inputs.forEach((el) =>
   el.addEventListener("blur", (event) => validateInput(event.target), true)
 );
 
+// delay validation while the user is typing
 passwords.forEach((el) =>
   el.addEventListener("input", () => {
     clearTimeout(inputTimer);
@@ -23,6 +26,7 @@ passwords.forEach((el) =>
 
 function submitForm(event) {
   inputs.forEach((el) => {
+    // trigger error classes for all invalid fields
     validateInput(el);
     if (!el.validity.valid) {
       event.preventDefault();
@@ -89,6 +93,6 @@ function toggleMessage(el, isValid, msg = el.validationMessage) {
   const span = spanId ? document.getElementById(spanId) : false;
 
   if (span) {
-    span.textContent = isValid ? "" : `\u26A0\uFE0E ${msg}`;
+    span.textContent = isValid ? "" : `${WARNING_SYMBOL} ${msg}`;
   }
 }
