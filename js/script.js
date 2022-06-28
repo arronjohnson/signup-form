@@ -1,3 +1,5 @@
+const INPUT_DELAY = 1000;
+const PASSWORD_MIN_LENGTH = 8;
 const WARNING_SYMBOL = "\u26A0\uFE0E";
 
 const form = document.getElementById("form");
@@ -20,7 +22,7 @@ inputs.forEach((el) =>
 passwords.forEach((el) =>
   el.addEventListener("input", () => {
     clearTimeout(inputTimer);
-    inputTimer = setTimeout(validatePasswords, 1000);
+    inputTimer = setTimeout(validatePasswords, INPUT_DELAY);
   })
 );
 
@@ -59,7 +61,7 @@ function validateInput(el) {
 function validatePasswords() {
   if (
     inputPwd.value === "" ||
-    inputPwd.value.length < 8 ||
+    inputPwd.value.length < PASSWORD_MIN_LENGTH ||
     inputConfirm.value === ""
   ) {
     return false;

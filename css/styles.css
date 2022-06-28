@@ -120,6 +120,10 @@ main > section {
   margin-bottom: 16px;
 }
 
+.form-row:first-child {
+  margin-top: 16px;
+}
+
 .form-row:last-child {
   margin-bottom: 16px;
 }
@@ -322,6 +326,7 @@ label {
 *********************************/
 @media (max-width: 450px) {
   .description {
+    padding: 32px;
     text-align: center;
   }
 
