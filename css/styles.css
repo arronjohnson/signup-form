@@ -150,11 +150,11 @@ label {
   width: 280px;
 }
 
-.form-input:focus,
 .form-input:focus-visible {
+  -webkit-appearance: none;
   border-color: var(--accent);
-  box-shadow: var(--shadow);
-  outline: 1px solid var(--accent);
+  box-shadow: var(--shadow), 0 0 0 1px var(--accent);
+  outline: 0;
 }
 
 .form-input.valid {
@@ -166,7 +166,7 @@ label {
 }
 
 .form-input.error:focus-visible {
-  outline-color: var(--error);
+  box-shadow: var(--shadow), 0 0 0 1px var(--error);
 }
 
 .requirements {
@@ -192,6 +192,7 @@ label {
 }
 
 .form-checkbox {
+  -webkit-appearance: none;
   appearance: none;
   border: 1px solid #e5e7eb;
   border-radius: 5px;
