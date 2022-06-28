@@ -90,7 +90,7 @@ main {
   justify-content: center;
 }
 
-main > section {
+.description {
   padding: 32px 48px;
 }
 
@@ -249,12 +249,10 @@ label {
 .footer-container {
   display: flex;
   justify-content: space-between;
-  padding: 32px;
-  padding-left: 48px;
+  padding: 32px 32px 32px 48px;
 }
 
 .footer {
-  font-size: 1rem;
   text-align: right;
 }
 
@@ -270,13 +268,11 @@ label {
 }
 
 .footer-attribute {
-  margin-bottom: 8px;
-  margin-top: 0;
+  margin: 0 0 8px;
 }
 
 .footer-copyright {
-  margin-bottom: 0;
-  margin-top: 8px;
+  margin: 8px 0 0;
 }
 
 /*********************************
@@ -311,14 +307,6 @@ label {
   .description-text:first-child {
     margin-top: 0;
   }
-
-  .form-header {
-    margin-bottom: 40px;
-  }
-
-  .checkbox-container {
-    margin-top: 32px;
-  }
 }
 
 @media (max-width: 850px) {
@@ -347,10 +335,6 @@ label {
     padding: 16px;
   }
 
-  .form-header {
-    text-align: center;
-  }
-
   .form-row {
     justify-content: center;
   }
@@ -366,9 +350,5 @@ label {
     align-items: center;
     display: flex;
     flex-direction: column;
-  }
-
-  .footer-container {
-    padding: 32px 0;
   }
 }

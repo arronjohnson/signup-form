@@ -10,11 +10,12 @@ const showPassword = document.getElementById("show-password");
 
 let inputTimer;
 
-form.addEventListener("submit", (event) => submitForm(event));
+/* EVENT LISTENERS */
+form.addEventListener("submit", (e) => submitForm(e));
 showPassword.addEventListener("change", () => togglePasswordVisibility());
 
 inputs.forEach((el) =>
-  el.addEventListener("blur", (event) => validateInput(event.target), true)
+  el.addEventListener("blur", (e) => validateInput(e.target), true)
 );
 
 // delay validation while the user is typing
@@ -25,6 +26,7 @@ passwords.forEach((el) =>
   })
 );
 
+/* FORM FUNCTIONS */
 function submitForm(event) {
   // prevent submission to avoid 405 errors
   event.preventDefault();
@@ -43,11 +45,10 @@ function submitForm(event) {
 
 function togglePasswordVisibility() {
   const newType = showPassword.checked ? "text" : "password";
-  passwords.forEach((el) => {
-    el.type = newType;
-  });
+  passwords.forEach((el) => (el.type = newType));
 }
 
+/* VALIDATION FUNCTIONS */
 function validateInput(el) {
   const isValid = el.validity.valid;
   toggleClass(el, isValid);
@@ -74,6 +75,7 @@ function passwordsMatch() {
   return inputPwd.value !== "" && inputPwd.value === inputConfirm.value;
 }
 
+/* VALIDATION STYLES */
 function toggleClass(el, isValid) {
   if (isValid) {
     el.classList.add("valid");
