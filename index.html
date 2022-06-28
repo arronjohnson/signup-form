@@ -34,13 +34,15 @@
         <p>
           <label for="first-name">First Name</label>
           <input class="form-input" type="text" name="first-name"
-            id="first-name" aria-describedby="first-validation" required>
+            id="first-name" aria-describedby="first-validation"
+            autocomplete="given-name" required>
           <span class="help" id="first-validation" aria-live="polite"></span>
         </p>
         <p>
           <label for="last-name">Last Name</label>
           <input class="form-input" type="text" name="last-name" id="last-name"
-            aria-describedby="last-validation" required>
+            aria-describedby="last-validation" autocomplete="family-name"
+            required>
           <span class="help" id="last-validation" aria-live="polite"></span>
         </p>
       </section>
@@ -49,14 +51,14 @@
           <label for="email">Email</label>
           <input class="form-input" type="email" name="email" id="email"
             aria-describedby="email-validation" placeholder="sample@gmail.com"
-            required>
+            autocomplete="email" required>
           <span class="help" id="email-validation" aria-live="polite"></span>
         </p>
         <p>
           <label for="phone">Phone Number</label>
           <input class="form-input" type="tel" name="phone" id="phone"
             aria-describedby="phone-validation" placeholder="+44 0000 000000"
-            required>
+            autocomplete="tel" required>
           <span class="help" id="phone-validation" aria-live="polite"></span>
         </p>
       </section>
@@ -66,14 +68,15 @@
             Password <span class="requirements">(minimum 8 characters)</span>
           </label>
           <input class="form-input" type="password" name="pwd" id="pwd"
-            minlength="8" aria-describedby="pwd-validation" required>
+            minlength="8" aria-describedby="pwd-validation"
+            autocomplete="new-password" required>
           <span class="help" id="pwd-validation" aria-live="polite"></span>
         </p>
         <p>
           <label for="pwd">Confirm Password</label>
           <input class="form-input" type="password" name="pwd-confirm"
             id="pwd-confirm" minlength="8" aria-describedby="confirm-validation"
-            required>
+            autocomplete="new-password" required>
           <span class="help" id="confirm-validation" aria-live="polite"></span>
         </p>
       </section>
