@@ -61,6 +61,7 @@ function validateInput(el) {
 
 function validatePasswords() {
   if (!inputPwd.validity.valid) return;
+  if (inputPwd.value == "" || inputConfirm.value == "") return;
 
   const match = passwordsMatch();
   const msg = match ? "" : "Passwords don't match";
