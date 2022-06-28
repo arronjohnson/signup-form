@@ -141,7 +141,7 @@ label {
   margin-bottom: 2px;
 }
 
-input {
+.form-input {
   border: 1px solid #e5e7eb;
   border-radius: 5px;
   height: 34px;
@@ -149,21 +149,21 @@ input {
   width: 280px;
 }
 
-input:focus-visible {
+.form-input:focus-visible {
   border-color: var(--accent);
   box-shadow: var(--shadow);
   outline: 1px solid var(--accent);
 }
 
-input.valid {
+.form-input.valid {
   background: center right 5px / 24px url("../images/check.svg") no-repeat;
 }
 
-input.error {
+.form-input.error {
   border-color: var(--error);
 }
 
-input.error:focus-visible {
+.form-input.error:focus-visible {
   outline-color: var(--error);
 }
 
@@ -181,6 +181,36 @@ input.error:focus-visible {
   min-height: 1.2rem;
   margin-top: 2px;
   max-width: 280px;
+}
+
+.checkbox-container {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+}
+
+.form-checkbox {
+  appearance: none;
+  border: 1px solid #e5e7eb;
+  border-radius: 5px;
+  display: grid;
+  height: 44px;
+  place-content: center;
+  width: 44px;
+}
+
+.form-checkbox::before {
+  background-color: var(--accent);
+  content: "";
+  clip-path: polygon(28% 38%, 41% 53%, 75% 24%, 86% 38%, 40% 78%, 15% 50%);
+  height: 40px;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  width: 40px;
+}
+
+.form-checkbox:checked::before {
+  transform: scale(1);
 }
 
 /* Buttons */
@@ -237,7 +267,7 @@ input.error:focus-visible {
 @media (max-width: 1250px) {
   body {
     align-items: center;
-    background: url("../images/bg.jpg") center/cover no-repeat fixed;
+    background: url("../images/bg.jpg") center / cover no-repeat fixed;
     flex-direction: column;
   }
 
@@ -291,7 +321,7 @@ input.error:focus-visible {
     justify-content: center;
   }
 
-  input {
+  .form-input {
     width: 70vw;
   }
 

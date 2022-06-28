@@ -1,12 +1,14 @@
 const form = document.getElementById("form");
-const inputs = document.querySelectorAll("input");
-const passwords = document.querySelectorAll("input[type='password']");
-const inputPwd = document.getElementById("pwd");
 const inputConfirm = document.getElementById("pwd-confirm");
+const inputPwd = document.getElementById("pwd");
+const inputs = document.querySelectorAll(".form-input");
+const passwords = document.querySelectorAll("input[type='password']");
+const showPassword = document.getElementById("show-password");
 
 let inputTimer;
 
 form.addEventListener("submit", (event) => submitForm(event));
+showPassword.addEventListener("change", () => togglePasswordVisibility());
 
 inputs.forEach((el) =>
   el.addEventListener("blur", (event) => validateInput(event.target), true)
@@ -31,6 +33,13 @@ function submitForm(event) {
   if (firstInvalid) {
     firstInvalid.focus();
   }
+}
+
+function togglePasswordVisibility() {
+  const newType = showPassword.checked ? "text" : "password";
+  passwords.forEach((el) => {
+    el.type = newType;
+  });
 }
 
 function validateInput(el) {
@@ -66,7 +75,13 @@ function passwordsMatch() {
 }
 
 function toggleClass(el, isValid) {
-  el.className = isValid ? "valid" : "error";
+  if (isValid) {
+    el.classList.add("valid");
+    el.classList.remove("error");
+  } else {
+    el.classList.add("error");
+    el.classList.remove("valid");
+  }
 }
 
 function toggleMessage(el, isValid, msg = el.validationMessage) {
