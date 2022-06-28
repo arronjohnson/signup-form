@@ -125,20 +125,31 @@ main > section {
 }
 
 .form-row:last-child {
-  margin-bottom: 16px;
+  row-gap: 32px;
 }
 
 .form-row p {
   margin: 0;
 }
 
-label {
+label,
+ul {
   color: #3b4b5f;
-  display: block;
   font-size: 0.85rem;
   text-transform: uppercase;
   font-weight: 700;
   margin-bottom: 2px;
+}
+
+label {
+  display: block;
+}
+
+.checkbox-container,
+.form-input,
+.form-list,
+.help {
+  width: 280px;
 }
 
 .form-input {
@@ -146,7 +157,6 @@ label {
   border-radius: 5px;
   height: 34px;
   padding: 6px 4ch 6px 10px;
-  width: 280px;
 }
 
 .form-input:focus-visible {
@@ -168,17 +178,18 @@ label {
   box-shadow: var(--shadow), 0 0 0 1px var(--error);
 }
 
-.requirements {
-  color: #9f9f9f;
-  font-weight: 500;
-}
-
 .help {
   color: var(--error);
   display: block;
   min-height: 1.2rem;
   margin-top: 3px;
-  max-width: 280px;
+}
+
+.form-list {
+  color: #9f9f9f;
+  list-style-position: inside;
+  margin: 0;
+  padding-inline-start: 2px;
 }
 
 .checkbox-container {
@@ -304,6 +315,10 @@ label {
   .form-header {
     margin-bottom: 40px;
   }
+
+  .checkbox-container {
+    margin-top: 32px;
+  }
 }
 
 @media (max-width: 850px) {
@@ -328,6 +343,10 @@ label {
     text-align: center;
   }
 
+  .form {
+    padding: 16px;
+  }
+
   .form-header {
     text-align: center;
   }
@@ -336,7 +355,10 @@ label {
     justify-content: center;
   }
 
-  .form-input {
+  .checkbox-container,
+  .form-input,
+  .form-list,
+  .help {
     width: 70vw;
   }
 

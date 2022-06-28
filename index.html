@@ -67,27 +67,35 @@
       <section class="form-row">
         <p>
           <label for="pwd">
-            Password <span class="requirements">(minimum 8 characters)</span>
+            Password
           </label>
           <input class="form-input" type="password" name="pwd" id="pwd"
             minlength="8" aria-describedby="pwd-validation"
-            autocomplete="new-password" required>
+            autocomplete="new-password"
+            pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" required>
           <span class="help" id="pwd-validation" aria-live="polite"></span>
         </p>
         <p>
           <label for="pwd-confirm">Confirm Password</label>
           <input class="form-input" type="password" name="pwd-confirm"
             id="pwd-confirm" minlength="8" aria-describedby="confirm-validation"
-            autocomplete="new-password" required>
+            autocomplete="new-password"
+            pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" required>
           <span class="help" id="confirm-validation" aria-live="polite"></span>
         </p>
       </section>
       <section class="form-row">
-        <div class="checkbox-container">
+        <ul class="form-list">
+          <li>One lowercase character</li>
+          <li>One uppercase character</li>
+          <li>One number</li>
+          <li>8 characters minimum</li>
+        </ul>
+        <p class="checkbox-container">
           <input class="form-checkbox" type="checkbox" name="show-password"
             id="show-password" aria-controls="pwd">
           <label for="show-password">Show password</label>
-        </div>
+        </p>
       </section>
     </form>
     <div class="footer-container">

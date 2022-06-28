@@ -1,5 +1,4 @@
 const INPUT_DELAY = 1000;
-const PASSWORD_MIN_LENGTH = 8;
 const WARNING_SYMBOL = "\u26A0\uFE0E";
 
 const form = document.getElementById("form");
@@ -60,13 +59,7 @@ function validateInput(el) {
 }
 
 function validatePasswords() {
-  if (
-    inputPwd.value === "" ||
-    inputPwd.value.length < PASSWORD_MIN_LENGTH ||
-    inputConfirm.value === ""
-  ) {
-    return false;
-  }
+  if (!inputPwd.validity.valid) return;
 
   const match = passwordsMatch();
   const msg = match ? "" : "Passwords don't match";
