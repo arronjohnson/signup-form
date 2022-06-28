@@ -27,17 +27,18 @@ passwords.forEach((el) =>
 );
 
 function submitForm(event) {
-  inputs.forEach((el) => {
-    // trigger error classes for all invalid fields
-    validateInput(el);
-    if (!el.validity.valid) {
-      event.preventDefault();
-    }
-  });
+  // prevent submission to avoid 405 errors
+  event.preventDefault();
+  // trigger error classes for all invalid fields
+  inputs.forEach((el) => validateInput(el));
 
   const firstInvalid = document.querySelector("input:invalid");
   if (firstInvalid) {
     firstInvalid.focus();
+  } else {
+    // reset the form to simulate valid submission
+    form.reset();
+    inputs.forEach((el) => el.classList.remove("valid"));
   }
 }
 
