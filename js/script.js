@@ -1,4 +1,5 @@
 const INPUT_DELAY = 1000;
+const PASSWORD_MIN_LENGTH = 8;
 const WARNING_SYMBOL = "\u26A0\uFE0E";
 
 const form = document.getElementById("form");
@@ -67,9 +68,10 @@ function checkPwdRequirements() {
     password.match(/[a-z]/),
     password.match(/[A-Z]/),
     password.match(/[0-9]/),
-    password.length >= 8,
+    password.length >= PASSWORD_MIN_LENGTH,
   ];
 
+  // change the bullet icon to alert validity to the user
   for (let i = 0; i < listItems.length; i++) {
     const glyph = listItems[i].querySelector("i");
 
