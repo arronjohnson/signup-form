@@ -51,7 +51,7 @@ function validateInput(el) {
   toggleMessage(el, isValid);
 
   if (el.id.startsWith("pwd")) {
-    validatePasswords();
+    comparePasswords();
   }
 }
 
