@@ -9,6 +9,7 @@
   --accent: #3689fc;
   --bg-image: url("../images/bg.jpg");
   --error: #f00;
+  --fa-li-margin: 1.5em;
   --shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -147,8 +148,8 @@ label {
 
 .checkbox-container,
 .form-input,
-.form-list,
-.help {
+.help,
+.list-container {
   width: 280px;
 }
 
@@ -187,9 +188,11 @@ label {
 
 .form-list {
   color: #9f9f9f;
-  list-style-position: inside;
   margin: 0;
-  padding-inline-start: 2px;
+}
+
+.i-active {
+  color: #5ea1fd;
 }
 
 .checkbox-container {
@@ -341,8 +344,8 @@ label {
 
   .checkbox-container,
   .form-input,
-  .form-list,
-  .help {
+  .help,
+  .list-container {
     width: 70vw;
   }
 

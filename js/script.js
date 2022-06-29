@@ -5,6 +5,7 @@ const form = document.getElementById("form");
 const inputConfirm = document.getElementById("pwd-confirm");
 const inputPwd = document.getElementById("pwd");
 const inputs = document.querySelectorAll(".form-input");
+const listItems = document.querySelectorAll(".form-list li");
 const passwords = document.querySelectorAll("input[type='password']");
 const showPassword = document.getElementById("show-password");
 
@@ -18,13 +19,7 @@ inputs.forEach((el) =>
   el.addEventListener("blur", (e) => validateInput(e.target), true)
 );
 
-// delay validation while the user is typing
-passwords.forEach((el) =>
-  el.addEventListener("input", () => {
-    clearTimeout(inputTimer);
-    inputTimer = setTimeout(validatePasswords, INPUT_DELAY);
-  })
-);
+passwords.forEach((el) => el.addEventListener("input", validatePasswords));
 
 /* FORM FUNCTIONS */
 function submitForm(event) {
@@ -60,6 +55,33 @@ function validateInput(el) {
 }
 
 function validatePasswords() {
+  checkPwdRequirements();
+  // delay validation while the user is typing
+  clearTimeout(inputTimer);
+  inputTimer = setTimeout(comparePasswords, INPUT_DELAY);
+}
+
+function checkPwdRequirements() {
+  const password = inputPwd.value;
+  const validations = [
+    password.match(/[a-z]/),
+    password.match(/[A-Z]/),
+    password.match(/[0-9]/),
+    password.length >= 8,
+  ];
+
+  for (let i = 0; i < listItems.length; i++) {
+    const glyph = listItems[i].querySelector("i");
+
+    if (validations[i]) {
+      glyph.className = "i-active fas fa-square-check";
+    } else {
+      glyph.className = "far fa-square";
+    }
+  }
+}
+
+function comparePasswords() {
   if (!inputPwd.validity.valid) return;
   if (inputPwd.value == "" || inputConfirm.value == "") return;
 
