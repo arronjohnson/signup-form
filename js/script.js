@@ -7,6 +7,7 @@ const inputConfirm = document.getElementById("pwd-confirm");
 const inputPwd = document.getElementById("pwd");
 const inputs = document.querySelectorAll(".form-input");
 const listItems = document.querySelectorAll(".form-list li");
+const listBullets = document.querySelectorAll(".form-list i");
 const passwords = document.querySelectorAll("input[type='password']");
 const showPassword = document.getElementById("show-password");
 
@@ -36,6 +37,7 @@ function submitForm(event) {
     // reset the form to simulate valid submission
     form.reset();
     inputs.forEach((el) => el.classList.remove("valid"));
+    listBullets.forEach((el) => (el.className = "far fa-square"));
   }
 }
 
